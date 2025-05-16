@@ -36,7 +36,7 @@ const MetricCard: React.FC<MetricCardProps> = ({
       <CardContent>
         <div className="space-y-3">
           <div className={cn("text-3xl font-bold tracking-tight", valueClassName)}>
-            {value}{isPercentage ? '%' : ''}
+            {value}{isPercentage ? '' : ''}
           </div>
           <Select 
             value={timeRange} 
