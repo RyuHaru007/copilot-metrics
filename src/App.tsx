@@ -8,7 +8,7 @@ import Languages from '@/pages/Languages';
 import Editors from '@/pages/Editors';
 import CopilotChat from '@/pages/CopilotChat';
 import SeatAnalysis from '@/pages/SeatAnalysis';
-import ApiResponse from '@/pages/ApiResponse';
+// import ApiResponse from '@/pages/ApiResponse';
 import PageLayout from '@/components/PageLayout';
 
 // Protected route component
@@ -42,7 +42,7 @@ function App() {
           <Route path="editors" element={<Editors />} />
           <Route path="copilot-chat" element={<CopilotChat />} />
           <Route path="seat-analysis" element={<SeatAnalysis />} />
-          <Route path="api-response" element={<ApiResponse />} />
+          {/* <Route path="api-response" element={<ApiResponse />} /> */}
         </Route>
         
         <Route path="*" element={<Navigate to="/" replace />} />

@@ -6,9 +6,9 @@ import {
   BarChart,
   ChevronLeft,
   ChevronRight,
-  Globe,
+  // Globe,
   Code,
-  Server,
+  // Server,
   MessageSquare,
   Users,
   LayoutDashboard,
@@ -25,7 +25,7 @@ const Sidebar: React.FC = () => {
     { name: 'Editors', path: '/editors', icon: <Terminal size={20} /> },
     { name: 'Copilot Chat', path: '/copilot-chat', icon: <MessageSquare size={20} /> },
     { name: 'Seat Analysis', path: '/seat-analysis', icon: <Users size={20} /> },
-    { name: 'API Response', path: '/api-response', icon: <Server size={20} /> },
+    // { name: 'API Response', path: '/api-response', icon: <Server size={20} /> },
   ];
 
   return (

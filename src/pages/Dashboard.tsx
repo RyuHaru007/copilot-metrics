@@ -2,7 +2,9 @@ import React from 'react';
 import { formatNumber, formatPercent } from '@/lib/utils';
 import { useUIStore } from '@/store/uiStore';
 import { getDashboardData } from '@/data/mockData';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import MetricCard from '@/components/MetricCard';
+import { TimeRange } from '@/lib/utils';
 
 const Dashboard: React.FC = () => {
   const { dashboardTimeRange, setDashboardTimeRange } = useUIStore();
@@ -10,7 +12,26 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Dashboard</h1>
+      <div>
+      <h1 className="flex inline-flex items-center gap-2 text-2xl font-bold">Dashboard</h1>
+      <span className="float-right">
+      <Select 
+            value={dashboardTimeRange} 
+            onValueChange={(value) => setDashboardTimeRange(value as TimeRange)}
+          >
+            <SelectTrigger className="h-10 text-base w-56">
+              <SelectValue placeholder="Select time range" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="28days">28 days</SelectItem>
+              <SelectItem value="6months">6 months</SelectItem>
+              <SelectItem value="1year">1 year</SelectItem>
+              <SelectItem value="5years">5 years</SelectItem>
+              <SelectItem value="all">All time</SelectItem>
+            </SelectContent>
+          </Select>
+          </span>
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <MetricCard

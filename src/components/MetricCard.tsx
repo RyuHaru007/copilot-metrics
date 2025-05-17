@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { TimeRange, getTimeRangeLabel } from '@/lib/utils';
 import { cn } from '@/lib/utils';
 
@@ -20,7 +20,7 @@ const MetricCard: React.FC<MetricCardProps> = ({
   description,
   value,
   timeRange,
-  onTimeRangeChange,
+  // onTimeRangeChange,
   isPercentage = false,
   className = '',
   valueClassName = '',
@@ -38,7 +38,7 @@ const MetricCard: React.FC<MetricCardProps> = ({
           <div className={cn("text-3xl font-bold tracking-tight", valueClassName)}>
             {value}{isPercentage ? '' : ''}
           </div>
-          <Select 
+          {/* <Select 
             value={timeRange} 
             onValueChange={(value) => onTimeRangeChange(value as TimeRange)}
           >
@@ -52,7 +52,7 @@ const MetricCard: React.FC<MetricCardProps> = ({
               <SelectItem value="5years">5 years</SelectItem>
               <SelectItem value="all">All time</SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
         </div>
       </CardContent>
     </Card>
