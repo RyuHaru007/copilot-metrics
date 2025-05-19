@@ -8,6 +8,7 @@ import Languages from '@/pages/Languages';
 import Editors from '@/pages/Editors';
 import CopilotChat from '@/pages/CopilotChat';
 import SeatAnalysis from '@/pages/SeatAnalysis';
+import InactiveUsers  from './pages/InActiveUsers';
 // import ApiResponse from '@/pages/ApiResponse';
 import PageLayout from '@/components/PageLayout';
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="editors" element={<Editors />} />
           <Route path="copilot-chat" element={<CopilotChat />} />
           <Route path="seat-analysis" element={<SeatAnalysis />} />
+          <Route path="inactive-users" element={<InactiveUsers />} />
           {/* <Route path="api-response" element={<ApiResponse />} /> */}
         </Route>
         

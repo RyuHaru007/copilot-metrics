@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import DataTable from '@/components/DataTable';
 import { TimeRange } from '@/lib/utils';
 
-const SeatAnalysis: React.FC = () => {
+const InactiveUsers: React.FC = () => {
   const { seatAnalysisTimeRange, setSeatAnalysisTimeRange } = useUIStore();
   const data = getSeatAnalysisData(seatAnalysisTimeRange);
   
@@ -30,42 +30,14 @@ const SeatAnalysis: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Seat Analysis</h1>
+      <h1 className="text-2xl font-bold">Inactive Users</h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Card>
+      <div className="flex justify-center">
+        <Card className="w-full md:w-1/3">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Total assigned</CardTitle>
+            <CardTitle className="text-sm font-medium">Inactive users in the last {noActivityLabels[seatAnalysisTimeRange]}</CardTitle>
             <CardDescription className="text-xs">
-              Currently assigned seats
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="text-3xl font-bold tracking-tight text-blue-600">
-              {data.totalAssigned}
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Assigned but never used</CardTitle>
-            <CardDescription className="text-xs">
-              No show seats
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="text-3xl font-bold tracking-tight text-amber-600">
-              {data.assignedNeverUsed}
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">No Activity in the last {noActivityLabels[seatAnalysisTimeRange]}</CardTitle>
-            <CardDescription className="text-xs">
-              No use in the last {noActivityLabels[seatAnalysisTimeRange]}
+             Inactivity Period of {noActivityLabels[seatAnalysisTimeRange]}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -94,7 +66,7 @@ const SeatAnalysis: React.FC = () => {
       </div>
       
       <div className="mt-8">
-        <h2 className="text-xl font-medium mb-4">Seat Usage Details</h2>
+        <h2 className="text-xl font-medium mb-4">Inactive Users</h2>
         <DataTable
           columns={tableColumns}
           data={data.users}
@@ -104,4 +76,4 @@ const SeatAnalysis: React.FC = () => {
   );
 };
 
-export default SeatAnalysis;
+export default InactiveUsers;
