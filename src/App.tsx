@@ -8,7 +8,7 @@ import Languages from '@/pages/Languages';
 import Editors from '@/pages/Editors';
 import CopilotChat from '@/pages/CopilotChat';
 import SeatAnalysis from '@/pages/SeatAnalysis';
-import InactiveUsers  from './pages/InActiveUsers';
+import InactiveUsers  from '@/pages/InActiveUsers';
 // import ApiResponse from '@/pages/ApiResponse';
 import PageLayout from '@/components/PageLayout';
 
